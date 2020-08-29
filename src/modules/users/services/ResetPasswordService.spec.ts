@@ -67,7 +67,7 @@ describe('ResetPasswordService', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('should not be able to reset the password after 2-hour-period after token generation', async () => {
+  it('should not be able to reset the password if more than 2 hours passed', async () => {
     const user = await fakeUsersRepository.create({
       name: 'John Doe',
       email: 'johndoe@example.com',
